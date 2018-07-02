@@ -17,5 +17,5 @@
 - 如果`node`开始到`target`不存在单向向下的路径，则直接返回`-1`。
 - 如果`node`就是`target`，则把`target`的全部深度为`K`的孩子都加入答案列表，并返回`0`。
 - 如果不是`target`又存在路径，则存在两种情况：
-  - `target`是`node`的左孩子的孩子，且左孩子到`target`的距离为`l`，则`node`到`target`的距离为`l + 1`，如果`l + 1`刚好就是`K`，则把`node.val`加入答案列表，如果不是则把`node.right`的深度为`K - l - 2`的孩子们加入答案列表。
+  - `target`是`node`的左孩子的孩子，且左孩子到`target`的距离为`l`，则`node`到`target`的距离为`l + 1`，如果`l + 1`刚好就是`K`，则把`node.val`加入答案列表；如果不是则把`node.right`的深度为`K - l - 2`的孩子们加入答案列表。
   - `target`是`node`的右孩子的孩子。方法同上。
