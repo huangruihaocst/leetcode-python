@@ -7,6 +7,8 @@ class Solution:
         """
         if b == 0:
         	return a
+        if a == 0:
+            return b
         tmp = a ^ b
         b = (a & b) << 1
         a = tmp
