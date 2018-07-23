@@ -36,7 +36,7 @@ class Solution:
         #
         # return leaves(root1) == leaves(root2)
 
-        # Solution 2: DFS with yield
+        # Solution 2: DFS with generator
         def dfs(node):
             if node:
                 if not node.left and not node.right:
