@@ -4,12 +4,11 @@ class Solution:
         :type points: List[List[int]]
         :rtype: int
         """
-        n = len(points)
         res = 0
-        for i in range(n):
+        for [i, j] in points:
             dist = dict()
-            for j in range(n):
-                d = (points[i][0] - points[j][0]) ** 2 + (points[i][1] - points[j][1]) ** 2
+            for [x, y] in points:
+                d = (i - x) * (i - x) + (j - y) * (j - y)
                 dist[d] = dist[d] + 1 if d in dist else 1
             for k, v in dist.items():
                 if v > 1:
