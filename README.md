@@ -34,3 +34,15 @@ if not head:
 ```Python
 if not li:
 ```
+
+5. 在循环的时候如果在循环内更新`res`，有可能在结尾处还需要更新一次，
+因为有可能一直到出循环都没有满足`if`条件，但是实际上`res`需要更新了。
+
+```Python
+for loop:
+    if xxx:
+        res = max(...)  # update res
+    else:
+        xxx
+res = max(...)  # update res again
+```

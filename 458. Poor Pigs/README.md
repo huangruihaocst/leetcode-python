@@ -18,9 +18,11 @@
 另一只猪吃第一列，等15分钟；第二列，等15分钟；...
 如果第一只猪15分钟内死了，则毒药在第一行；如果15~30分钟死了，则在第二行...列同理。
 因为有4次测试的机会，因此如果都没死，就说明毒药在第5行（列）。
-用这种方法能确定25个桶中的毒药的位置。
+用这种方法最多能确定25个桶中的毒药的位置。
 
 如果再增加一只猪，就把方阵换成立方体。因此，如果有`x`只猪，喝毒药`t`时间后猪死，总共给时间`T`，
 那么最多能确定$(\lfloor\frac{T}{t}\rfloor + 1)^x$个桶中毒药的位置。
 
 用这种方法可以确定最少的猪的头数。
+
+参考：[Another explanation and solution - LeetCode Discuss](https://leetcode.com/problems/poor-pigs/discuss/94266/Another-explanation-and-solution)。
