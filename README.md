@@ -46,3 +46,13 @@ for loop:
         xxx
 res = max(...)  # update res again
 ```
+
+6. 树只有根节点一个节点
+
+```Python
+if not root.left and not root.right:
+```
+
+## 注意事项总结
+
+1. 注意返回的数据类型，比如`1`和`'1'`不同，`1`和`1.0`不同。
