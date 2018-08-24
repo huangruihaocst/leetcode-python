@@ -12,27 +12,42 @@ class Solution:
         :type root: TreeNode
         :rtype: bool
         """
-        def reverse(r):
-            if not r:
-                return None
-            r.left, r.right = r.right, r.left
-            reverse(r.left)
-            reverse(r.right)
+        # Solution 1:
+        # def reverse(r):
+        #     if not r:
+        #         return None
+        #     r.left, r.right = r.right, r.left
+        #     reverse(r.left)
+        #     reverse(r.right)
+        #
+        # def equals(r1, r2):
+        #     if r1 is None and r2 is None:
+        #         return True
+        #     if (r1 is None and r2 is not None) or (r1 is not None and r2 is None):
+        #         return False
+        #     if r1.val != r2.val:
+        #         return False
+        #     return equals(r1.left, r2.left) and equals(r1.right, r2.right)
+        #
+        # if not root:
+        #     return True
+        # right = root.right
+        # reverse(right)
+        # return equals(root.left, right)
 
-        def equals(r1, r2):
-            if r1 is None and r2 is None:
+        # Solution 2:
+        def symmetric(l, r):
+            if l is None and r is None:
                 return True
-            if (r1 is None and r2 is not None) or (r1 is not None and r2 is None):
+            if l is None or r is None:
                 return False
-            if r1.val != r2.val:
+            if l.val != r.val:
                 return False
-            return equals(r1.left, r2.left) and equals(r1.right, r2.right)
+            return symmetric(l.left, r.right) and symmetric(l.right, r.left)
 
         if not root:
             return True
-        right = root.right
-        reverse(right)
-        return equals(root.left, right)
+        return symmetric(root.left, root.right)
 
 
 if __name__ == '__main__':
@@ -40,4 +55,8 @@ if __name__ == '__main__':
     t = TreeNode(1)
     t.left = TreeNode(2)
     t.right = TreeNode(2)
+    t.left.left = TreeNode(3)
+    # t.left.right = TreeNode(4)
+    # t.right.left = TreeNode(4)
+    t.right.left = TreeNode(3)
     print(s.isSymmetric(t))
