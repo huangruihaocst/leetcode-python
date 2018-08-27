@@ -15,19 +15,20 @@ class Solution:
             return ans
 
         def check(curr, pos):  # check if it is legal to put a new queen on position pos
-            if len(curr) == 0:
+            put = len(curr)
+            if put == 0:
                 return True
             if pos in curr:
                 return False
-            if pos in (curr[-1] - 1, curr[-1] + 1):
-                return False
+            for r, p in enumerate(curr):
+                if pos in (p + (put - r), p - (put - r)):
+                    return False
             return True
 
         from copy import deepcopy
 
         def DFS(curr):
             nonlocal res_num
-            print(curr)
             if len(curr) == n:
                 res_num.append(deepcopy(curr))
                 return
