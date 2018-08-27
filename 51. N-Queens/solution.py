@@ -35,8 +35,7 @@ class Solution:
                 if check(curr, pos):
                     curr.append(pos)
                     DFS(curr)
-            curr.pop()
-            return
+                    curr.pop()
 
         DFS(list())
         res_str = list()  # result in the form of string list
