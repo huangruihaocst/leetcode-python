@@ -15,3 +15,6 @@
 这里只能用中序遍历，且使用到了BST的条件。因为BST的中序遍历就是按大小顺序输出，
 因此遍历的时候如果数变了，那么再往后就不会再出现这个数了。因此遍历一次就能找到出现最多的数出现的次数，
 再遍历一遍就能知道有哪些数出现了这么多次。
+
+时间复杂度是`O(n)`，`n`为节点个数。空间复杂度为`O(1)`，如果不计算递归遍历的栈空间的话。
+如果想不用递归遍历也不想用栈来遍历，可以用[Morris Traversal](https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/)。
