@@ -23,15 +23,12 @@ class Solution:
         stack = list()
         d = dict()
         for i in nums2[::-1]:
+            while len(stack) > 0 and stack[-1] < i:
+                stack.pop()
             if len(stack) == 0:
                 d[i] = -1
             else:
-                while len(stack) > 0 and stack[-1] < i:
-                    stack.pop()
-                if len(stack) == 0:
-                    d[i] = -1
-                else:
-                    d[i] = stack[-1]
+                d[i] = stack[-1]
             stack.append(i)
 
         res = list()
